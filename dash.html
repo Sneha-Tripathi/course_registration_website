@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #eef2f3, #d9e4ec);
+      color: #333;
+    }
+
+    .dashboard-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      padding: 12px;
+      margin: 8px 0;
+      background: #34495e;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .sidebar ul li:hover {
+      background: #1abc9c;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .profile-card {
+      background: url('bakkk.png')no-repeat center center/cover;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .profile-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .courses {
+      background: url('bakkk.png')no-repeat center center/cover;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .course {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      margin: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .course:last-child {
+      border-bottom: none;
+    }
+
+    .course button {
+      padding: 6px 12px;
+      border: none;
+      background: #1abc9c;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .course button:hover {
+      background: #16a085;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .dashboard-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+      <li>Profile</li>
+      <li>My Courses</li>
+      <li>Payments</li>
+      <li>Settings</li>
+      <li>Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Profile Section -->
+    <div class="profile-card">
+      <h3>Student Profile</h3>
+      <p><strong>Name:</strong> Sneha Tripathi</p>
+      <p><strong>Email:</strong> sneha@example.com</p>
+      <p><strong>Enrolled Since:</strong> Aug 2025</p>
+    </div>
+
+    <!-- Courses Section -->
+    <div class="courses">
+      <h3>My Courses</h3>
+      <div class="course">
+        <span>Web Development Bootcamp</span>
+        <button>View</button>
+      </div>
+      <div class="course">
+        <span>Java Programming Masterclass</span>
+        <button>View</button>
+      </div>
+      <div class="course">
+        <span>Data Structures & Algorithms</span>
+        <button>View</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

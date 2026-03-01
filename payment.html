@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Payment</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .payment-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .payment-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .payment-card h2 {
+      color: #333;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .payment-card p {
+      margin: 6px 0;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2c6e91;
+      margin: 12px 0;
+    }
+
+    button {
+      background: linear-gradient(45deg, #2c6e91, #56c1ff);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #1d4e68, #3ba6e3);
+    }
+
+    /* QR Code Section */
+    .qr-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-top: 30px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .qr-box img {
+      width: 200px;
+      margin: 15px 0;
+    }
+
+    .qr-box p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 22px;
+      }
+      .payment-card {
+        padding: 15px;
+      }
+      button {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose Your Course & Pay Securely</h1>
+  
+  <div class="course-container">
+    <div class="payment-card">
+      <h2>Web Development</h2>
+      <p>Learn full-stack development with hands-on projects.</p>
+      <p class="price">₹500</p>
+      <button class="payBtn" data-course="Web Development" data-amount="500">Pay Now</button>
+    </div>
+
+    <div class="payment-card">
+      <h2>Business</h2>
+      <p>Master entrepreneurship and management skills.</p>
+      <p class="price">₹500</p>
+      <button class="payBtn" data-course="Business" data-amount="500">Pay Now</button>
+    </div>
+
+    <div class="payment-card">
+      <h2>Design</h2>
+      <p>UI/UX design principles with real-world case studies.</p>
+      <p class="price">₹500</p>
+      <button class="payBtn" data-course="Design" data-amount="500">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- QR Code Payment -->
+  <div class="qr-box">
+    <h2>Pay Using UPI QR</h2>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=yourupi@okicici&pn=CoursePayment&am=500&cu=INR" alt="QR Code">
+    <p>📱 Scan this QR code with any UPI app (GPay, PhonePe, Paytm) to pay ₹500.</p>
+  </div>
+
+  <!-- Razorpay Checkout Script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    document.querySelectorAll('.payBtn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        let course = this.getAttribute('data-course');
+        let amount = this.getAttribute('data-amount') * 100; // convert to paise
+
+        var options = {
+            "key": "rzp_test_1234567890", // Replace with your Razorpay Test Key
+            "amount": amount,
+            "currency": "INR",
+            "name": "Course Registration",
+            "description": course + " Course Payment",
+            "handler": function (response){
+                alert("✅ Payment Successful for " + course + "! Payment ID: " + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": "Student Name",
+                "email": "student@example.com",
+                "contact": "9999999999"
+            },
+            "theme": {
+                "color": "#2c6e91"
+            },
+            "method": {
+              upi: true,
+              card: true,
+              netbanking: true,
+              wallet: true
+            }
+        };
+        var rzp = new Razorpay(options);
+        rzp.open();
+        e.preventDefault();
+      });
+    });
+  </script>
+</body>
+</html>

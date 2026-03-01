@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url("Screenshot (85).png") no-repeat center center fixed;
+  background-size: cover;  
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: #222;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Section Styling */
+    .course-category {
+      padding: 50px 60px;
+    }
+
+    .course-category h2 {
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+      color: black;
+      border-left: 5px solid #007bff;
+      padding-left: 10px;
+    }
+
+    /* Grid Layout */
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Exactly 4 per row */
+      gap: 25px;
+      justify-items: center;
+    }
+
+    /* Course Card */
+    .course-card {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      background: linear-gradient(to right, #F5F5DC, #5C4033);;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 150px; /* portrait-style image */
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .course-card h3 {
+      font-size: 1.2rem;
+      margin: 15px 0 10px;
+      color: black;
+    }
+
+    .course-card p {
+      font-size: 0.95rem;
+      color: black;
+      margin-bottom: 15px;
+    }
+
+    /* Button */
+    .course-card button {
+      display: block;
+      width: 90%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .course-card button:hover {
+      background: #0056b3;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+      .courses {
+        grid-template-columns: repeat(3, 1fr); /* 3 per row */
+      }
+    }
+
+    @media (max-width: 900px) {
+      .courses {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .courses {
+        grid-template-columns: 1fr; /* 1 per row */
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .course-category {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <header>
+    <h1>Explore Our Courses</h1>
+  </header>
+
+  <!-- Development -->
+  <section class="course-category">
+    <h2>Development</h2>
+    <div class="courses">
+      <div class="course-card"><img src="web D image.jpg"><h3>Web Development Bootcamp</h3><p>Learn HTML, CSS, JavaScript, and more.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="java images.jpg"><h3>Java Programming Mastery</h3><p>Master Java from basics to advanced.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="python images.jpg"><h3>Python for Beginners</h3><p>Learn Python step by step with projects.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="reactjs.webp"><h3>React JS Essentials</h3><p>Build dynamic web apps using React.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="angular images.jpg"><h3>Angular Development</h3><p>Create powerful web apps with Angular.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="-NodeJS-.png"><h3>Node.js Complete Guide</h3><p>Backend development with Node.js.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="php-mysql-.jpg"><h3>PHP & MySQL</h3><p>Build dynamic websites with PHP.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="django.jpg"><h3>Django for Web Apps</h3><p>Full-stack development using Django.</p><button>Enroll Now</button></div>
+    </div>
+  </section>
+
+  <!-- IT & Software -->
+  <section class="course-category">
+    <h2>IT & Software</h2>
+    <div class="courses">
+      <div class="course-card"><img src="CN basics.webp"><h3>Computer Networking Basics</h3><p>Understand TCP/IP, routers, and more.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Cyber security.webp"><h3>Cyber Security Fundamentals</h3><p>Protect systems and networks effectively.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="cloud computing.png"><h3>Cloud Computing with AWS</h3><p>Get started with cloud deployment.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="lunix admin.jpg"><h3>Linux Administration</h3><p>Learn Linux commands and server setup.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Kubernetes-vs-Docker devops.avif"><h3>DevOps with Docker & Kubernetes</h3><p>Automate deployment and scaling.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="web server admin.jpg"><h3>Windows Server Administration</h3><p>Manage Windows Server effectively.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Ethical Hacking.png"><h3>Ethical Hacking</h3><p>Penetration testing and security skills.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Microsoft Azure Cloud.webp"><h3>Microsoft Azure Cloud</h3><p>Deploy and manage services in Azure.</p><button>Enroll Now</button></div>
+    </div>
+  </section>
+
+  <!-- Business -->
+  <section class="course-category">
+    <h2>Business</h2>
+    <div class="courses">
+      <div class="course-card"><img src="Business-and-Management.webp"><h3>Business Management</h3><p>Master leadership and management skills.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Finance for Non-Finance.jpg"><h3>Finance for Non-Finance</h3><p>Understand financial basics easily.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Digital Marketing.webp"><h3>Digital Marketing</h3><p>SEO, social media, ads, and more.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Startup Entrepreneurship.jpg"><h3>Startup Entrepreneurship</h3><p>Learn how to launch and grow startups.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="HRM.jpg"><h3>Human Resource Management</h3><p>Recruitment, training, and development.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Leadership Skills.jpg"><h3>Leadership Skills</h3><p>Improve communication and teamwork.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Sales Mastery.png"><h3>Sales Mastery</h3><p>Learn modern sales techniques.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Investment & Stock Market.jpg"><h3>Investment & Stock Market</h3><p>Basics of trading and investing.</p><button>Enroll Now</button></div>
+    </div>
+  </section>
+
+  <!-- Design -->
+  <section class="course-category">
+    <h2>Design</h2>
+    <div class="courses">
+      <div class="course-card"><img src="UI UX Design.webp"><h3>UI/UX Design Basics</h3><p>Create beautiful and functional designs.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="images/photoshop.jpg"><h3>Photoshop Essentials</h3><p>Learn photo editing and graphic design.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Illustrator Masterclass.avif"><h3>Illustrator Masterclass</h3><p>Create vector graphics and illustrations.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="canva design.webp"><h3>Canva Design Mastery</h3><p>Design graphics easily using Canva.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Figma for Beginner.jpg"><h3>Figma for Beginners</h3><p>Design user interfaces collaboratively.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="3D Modeling Basics.jpg"><h3>3D Modeling Basics</h3><p>Create 3D objects with Blender.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="website animation.jpg"><h3>Animation Fundamentals</h3><p>Learn motion design and animation.</p><button>Enroll Now</button></div>
+      <div class="course-card"><img src="Video Editing.webp"><h3>Video Editing</h3><p>Edit videos with Premiere Pro & DaVinci.</p><button>Enroll Now</button></div>
+    </div>
+  </section>
+
+</body>
+</html>
