@@ -1,30 +1,30 @@
- Course Registration Website
+# Course Registration Website
 
 A responsive Course Registration Website developed using HTML, CSS, JavaScript, and Bootstrap. This project allows students to register for courses through a user-friendly interface and demonstrates frontend development with basic form handling and validation.
 
-Features
+# Features
 
-Student course registration form
+. Student course registration form
 
-Input validation using JavaScript
+. Input validation using JavaScript
 
-Responsive design using Bootstrap
+. Responsive design using Bootstrap
 
-Clean and user-friendly interface
+. Clean and user-friendly interface
 
-Structured layout with proper styling
+. Structured layout with proper styling
 
-🛠️ Technologies Used
+# Technologies Used
 
-HTML5
+1. HTML5
 
-CSS3
+2. CSS3
 
-JavaScript
+3. JavaScript
 
-Bootstrap
+4. Bootstrap
 
- Project Structure
+ # Project Structure
 course-registration-website/
 │
 ├── index.html
@@ -32,35 +32,35 @@ course-registration-website/
 ├── script.js
 └── README.md
 
- How to Run the Project
+# How to Run the Project
 
-Download or clone the repository.
+. Download or clone the repository.
 
-Open the project folder.
+. Open the project folder.
 
-Double-click on index.html
-OR
-Open it using Live Server in VS Code.
+. Double-click on index.html
+   OR
+. Open it using Live Server in VS Code.
 
- Learning Outcomes
+# Learning Outcomes
 
-Improved understanding of form handling and validation
+. Improved understanding of form handling and validation
 
-Learned responsive web design using Bootstrap
+. Learned responsive web design using Bootstrap
 
-Strengthened frontend development skills
+. Strengthened frontend development skills
 
-Gained practical experience in building structured web pages
+. Gained practical experience in building structured web pages
 
- Future Improvements
+# Future Improvements
 
-Add backend integration with database
+. Add backend integration with database
 
-Implement user authentication
+. Implement user authentication
 
-Store registration data permanently
+. Store registration data permanently
 
- Developed By
+# Developed By
 
 Sneha Tripathi
 B.Tech IT Student
